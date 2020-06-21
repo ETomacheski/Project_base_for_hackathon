@@ -3,9 +3,8 @@ import * as bodyParser from 'body-parser'
 import { createConnection } from 'typeorm'
 import routes from './routes'
 import session from 'express-session'
-import { Auth } from './config/auth'
+
 require('dotenv').config()
-const auth = new Auth()
 
 createConnection()
 
@@ -18,6 +17,6 @@ app.use(session({
 }))
 
 // register routes
-app.use(auth.Store)
+// app.use(auth.Store)
 app.use(routes)
 app.listen(3000)
