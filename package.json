@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpileOnly --ignore-watch node_modules --no-notify src/server.ts"
+    "dev": "ts-node-dev --respawn -r tsconfig-paths/register --transpileOnly --ignore-watch  node_modules --no-notify src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "ts-node-dev": "^1.0.0-pre.49",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^3.9.5"
   },
   "dependencies": {
