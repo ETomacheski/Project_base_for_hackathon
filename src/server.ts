@@ -1,8 +1,9 @@
-import express, { Request, Response } from 'express'
+import express from 'express'
 import * as bodyParser from 'body-parser'
 import { createConnection } from 'typeorm'
-import Routes from './routes'
-// create typeorm connection
+import routes from './routes'
+require('dotenv').config()
+
 createConnection().then(connection => {
   // create and setup express app
   const app = express()
@@ -10,6 +11,6 @@ createConnection().then(connection => {
 
   // register routes
 
-  app.use(Routes)
+  app.use(routes)
   app.listen(3000)
 })
