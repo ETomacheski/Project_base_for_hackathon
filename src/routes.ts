@@ -1,7 +1,8 @@
-import { Router } from 'express'
+import express, { Router } from 'express'
 import { UserController } from '@controllers/UserController'
 import { SessionController } from '@controllers/SessionController'
 import { Auth } from './config/auth'
+
 const routes = Router()
 
 const userController = new UserController()
@@ -19,7 +20,7 @@ routes.delete('/users/:id', userController.delete)
 
 routes.post('/login', sessionController.store)
 
-routes.use(Auth)
+// app.use(Auth)
 
 routes.get('/users/:id', userController.show)
 export default routes
